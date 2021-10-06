@@ -15,7 +15,7 @@ Now, we need to create a `Player` in database. We can do it instanciating the mo
 Player(name='Nium', item='Axe')
 ```
 #### Note
-If you don't want this behavior, you can desable it making this:
+If you don't want this behavior, you can disable it making this:
 ```py
 class Player(spl.Model, save=False):
 ```
@@ -38,4 +38,18 @@ player = Player.get(name="Nium")
 nium = player.copy()
 # Duplicates the `player` in database, but `NiumXp` in name.
 niumxp = player.duplicate(name="NiumXp")
+```
+
+---
+
+To get amount of instances (in database) from a Model you can use `len`!!
+```py
+len(Player)  # 18
+```
+
+#### Note
+This not work for instances! Only subclasses of `Model`.
+```py
+nium = Player.get(name="Nium")
+len(nium)  # Error
 ```

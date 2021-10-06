@@ -4,7 +4,9 @@ _NULL = object()
 
 
 class Attribute:
-    __slots__ = ()
+    __slots__ = (
+        "_default",
+    )
 
     def __init__(
         self,
